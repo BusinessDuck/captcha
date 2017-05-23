@@ -16,27 +16,35 @@ setTimeout(function () {
 
 function sendData(fileUrl) {
     var formData = new FormData();
-    formData.append("method", "base64");
-    formData.append("CapMonsterModule", "ZennoLab.AudioReCaptcha");
-    formData.append("ParallelMode", "true");
-    formData.append("file", fileUrl);
-    // formData.append("imginstructions2", "ZennoLab.AudioReCaptcha");
-    formData.append("key", "YOU_KEY_HERE");
-    formData.append("method", "post");
-    formData.append("phrase", "1");
-    formData.append("regsense", "1");
-    formData.append("calc", "1");
-    formData.append("question", "1");
-    formData.append("min_len", "0");
-    formData.append("max_len", "0");
-    formData.append("language", "0");
-    formData.append("numeric", "0");
-    formData.append("soft_id", "664");
-    formData.append("recaptcha", "0");
-
+    var fileRequest = new XMLHttpRequest();
     var request = new XMLHttpRequest();
-    request.open("POST", "https://178.159.42.197:2145/in.php");
-    // request.send(formData);
+    fileRequest.responseType = "blob";
+    fileRequest.onload = function () {
+        formData.append("method", "base64");
+        formData.append("CapMonsterModule", "ZennoLab.AudioReCaptcha");
+        formData.append("ParallelMode", "true");
+        formData.append("file", fileRequest.response);
+        // formData.append("imginstructions2", "ZennoLab.AudioReCaptcha");
+        formData.append("key", "YOU_KEY_HERE");
+        formData.append("method", "post");
+        formData.append("phrase", "1");
+        formData.append("regsense", "1");
+        formData.append("calc", "1");
+        formData.append("question", "1");
+        formData.append("min_len", "0");
+        formData.append("max_len", "0");
+        formData.append("language", "0");
+        formData.append("numeric", "0");
+        formData.append("soft_id", "664");
+        formData.append("recaptcha", "0");
+
+        request.open("POST", "http://178.159.42.197:2145/in.php", true);
+        request.setRequestHeader("Content-type", "multipart/form-data");
+        request.send(formData);
+    };
+    fileRequest.open("GET", fileUrl);
+    fileRequest.send();
+
     return request;
 }
 
