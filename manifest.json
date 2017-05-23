@@ -3,6 +3,14 @@
   "manifest_version": 2,
   "version": "0.1",
   "name": "reCaptcha Breaker",
+  "externally_connectable": {
+    "ids": ["*"],
+    "matches": [
+      "http://*.raiblockscommunity.net/*",
+      "*://google.com/*"
+    ],
+    "accepts_tls_channel_id": true
+  },
   "content_scripts": [
     {
       "matches": [
@@ -28,7 +36,7 @@
     "activeTab",
     "webRequest",
     "webRequestBlocking",
-    "https://www.google.com/recaptcha/api2/payload*",
-    "https://faucet.raiblockscommunity.net/*"
+    "https://faucet.raiblockscommunity.net/*",
+    "*://google.com/*"
   ]
 }
