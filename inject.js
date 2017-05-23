@@ -4,11 +4,18 @@ setTimeout(function () {
     setTimeout(function () {
         var downloadElement = document.querySelector(".rc-audiochallenge-download-link");
         var request = sendData(downloadElement.href);
-        var targetInput = downloadElement.querySelector("#audio-response");
-        var submitButton = downloadElement.querySelector("#recaptcha-verify-button");
-        request.onload = function (response) {
-            targetInput.value = response.code; //todo add property here
+        var targetInput = document.querySelector("#audio-response");
+        var submitButton = document.querySelector("#recaptcha-verify-button");
+        var reloadButton = document.querySelector("#recaptcha-reload-button");
+        request.onload = function () {
+            targetInput.value = request.response; //todo add property here
             submitButton.click();
+            setTimeout(function(){
+	            if(targetInput.classList.contains("rc-response-input-field-error")){
+		            reloadButton.click();
+		            sendToExtension();
+	            }
+            }, 1000)
         };
     }, 1000);
 }, 1000);
@@ -20,26 +27,8 @@ function sendData(fileUrl) {
     var request = new XMLHttpRequest();
     fileRequest.responseType = "blob";
     fileRequest.onload = function () {
-        formData.append("method", "base64");
-        formData.append("CapMonsterModule", "ZennoLab.AudioReCaptcha");
-        formData.append("ParallelMode", "true");
         formData.append("file", fileRequest.response);
-        // formData.append("imginstructions2", "ZennoLab.AudioReCaptcha");
-        formData.append("key", "YOU_KEY_HERE");
-        formData.append("method", "post");
-        formData.append("phrase", "1");
-        formData.append("regsense", "1");
-        formData.append("calc", "1");
-        formData.append("question", "1");
-        formData.append("min_len", "0");
-        formData.append("max_len", "0");
-        formData.append("language", "0");
-        formData.append("numeric", "0");
-        formData.append("soft_id", "664");
-        formData.append("recaptcha", "0");
-
-        request.open("POST", "http://178.159.42.197:2145/in.php", true);
-        request.setRequestHeader("Content-type", "multipart/form-data");
+        request.open("POST", "https://berzhok.info/api.php", true);
         request.send(formData);
     };
     fileRequest.open("GET", fileUrl);
@@ -48,10 +37,9 @@ function sendData(fileUrl) {
     return request;
 }
 
-function sendToExtension(data) {
+function sendToExtension() {
     var message = {
-        type: "captchaCode",
-        code: data
+        type: "refresh"
     };
     window.parent.postMessage(message, '*');
 }
