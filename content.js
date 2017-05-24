@@ -15,9 +15,9 @@ window.addEventListener("message", function (message) {
 	if (message.data.type !== "refresh") {
 		return;
 	}
-	location.reload();
+	chrome.extension.sendMessage({type: "restart"});
 }, false);
 
 window.onerror = function() {
-	location.reload();
+	chrome.extension.sendMessage({type: "restart"});
 };

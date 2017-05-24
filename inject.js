@@ -1,5 +1,8 @@
-setTimeout(function () {
+setTimeout(function init() {
     var button = document.querySelector("#recaptcha-audio-button");
+    if(!button){
+        return setTimeout(init, 1000);
+    }
     button.click();
     setTimeout(function () {
         var downloadElement = document.querySelector(".rc-audiochallenge-download-link");
