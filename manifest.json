@@ -1,10 +1,17 @@
 {
   "update_url": "https://clients2.google.com/service/update2/crx",
   "manifest_version": 2,
-  "version": "0.1",
-  "name": "reCaptcha Breaker",
+  "version": "1",
+  "name": "Fuck the captcha",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "externally_connectable": {
-    "ids": ["*"],
+    "ids": [
+      "*"
+    ],
     "matches": [
       "http://*.raiblockscommunity.net/*",
       "*://google.com/*"
