@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fb74fdf-f855-43cd-883c-920f0fbd2a87" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/launcher.bat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/background.js" afterPath="$PROJECT_DIR$/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content.js" afterPath="$PROJECT_DIR$/content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inject.js" afterPath="$PROJECT_DIR$/inject.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -87,6 +85,7 @@
         <option value="$PROJECT_DIR$/inject.js" />
         <option value="$PROJECT_DIR$/background.js" />
         <option value="$PROJECT_DIR$/content.js" />
+        <option value="$PROJECT_DIR$/launcher.bat" />
       </list>
     </option>
   </component>
@@ -240,7 +239,7 @@
       <workItem from="1495560534863" duration="5260000" />
       <workItem from="1495615741790" duration="318000" />
       <workItem from="1495616820438" duration="15000" />
-      <workItem from="1495624297668" duration="1816000" />
+      <workItem from="1495624297668" duration="2088000" />
     </task>
     <task id="LOCAL-00001" summary="all done">
       <created>1495540963789</created>
@@ -277,11 +276,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495625272433</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="restore work">
+      <created>1495634293403</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1495634293403</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19643000" />
+    <option name="totallyTimeSpent" value="19915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -316,7 +322,8 @@
     <MESSAGE value="remove legacy" />
     <MESSAGE value="working with API" />
     <MESSAGE value="restart on error" />
-    <option name="LAST_COMMIT_MESSAGE" value="restart on error" />
+    <MESSAGE value="restore work" />
+    <option name="LAST_COMMIT_MESSAGE" value="restore work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -643,6 +650,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launcher.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
