@@ -7,8 +7,14 @@ if (item && !alertDetect) { //captcha iframe
 }
 
 var input = document.querySelector("#ask_address");
+var checkbox = document.querySelector("#donate");
 if (input) {
 	input.value = "xrb_33csxso3mj18kf39gnpstqi6rwtdwzuj884fcw8yw971dq3ss7iyz86eohj3";
+}
+
+if(checkbox) {
+	checkbox.value = 0;
+	checkbox.checked = false;
 }
 
 window.addEventListener("message", function (message) {
